@@ -2442,11 +2442,11 @@ async def auto_filter(client, msg, spoll=False):
     else:
         if settings["button"]:
            # syud = message.chat.title if message.chat.title else "Bot Cracker"              #Fix-ed by @Syd_Xyz
-            cap = f"<b>⚧️ Rᴇꜱᴜʟᴛꜱ Fᴏʀ <code>{search}</code></b>"
+            cap = f"<b>🧊 Rᴇꜱᴜʟᴛꜱ Fᴏʀ <code>{search}</code></b>"
             #cap = f"<b>⚧️ Tɪᴛʟᴇ : <code>{search}</code>\n📂 Tᴏᴛᴀʟ ꜰɪʟᴇꜱ : <code>{total_results}</code>\n📝 RᴇQᴜᴇsᴛᴇᴅ ʙʏ : {message.from_user.mention}\n⏰ Rᴇsᴜʟᴛ ɪɴ : <code>{remaining_seconds} Sᴇᴄᴏɴᴅs</code>\n⚜️ Pᴏᴡᴇʀᴇᴅ ʙʏ : 👇\n⚡ {syud} \n\n</b>"  #Fix-ed by @Syd_Xyz
         else:
            # syud = message.chat.title if message.chat.title else "Bot Cracker" 
-            cap = f"<b>⚧️ Rᴇꜱᴜʟᴛꜱ Fᴏʀ <code>{search}</code></b>"  #Fix-ed by @Syd_Xyz
+            cap = f"<b>🧊 Rᴇꜱᴜʟᴛꜱ Fᴏʀ <code>{search}</code></b>"  #Fix-ed by @Syd_Xyz
            # cap = f"<b>⚧️ Tɪᴛʟᴇ : <code>{search}</code>\n📂 Tᴏᴛᴀʟ ꜰɪʟᴇꜱ : <code>{total_results}</code>\n📝 RᴇQᴜᴇsᴛᴇᴅ ʙʏ : {message.from_user.mention}\n⏰ Rᴇsᴜʟᴛ ɪɴ : <code>{remaining_seconds} Sᴇᴄᴏɴᴅs</code>\n⚜️ Pᴏᴡᴇʀᴇᴅ ʙʏ : 👇\n⚡ {syud} \n\n</b>"  #Fix-ed by @Syd_Xyz
             # cap+="<b>Hᴇʏ {message.from_user.mention}, Hᴇʀᴇ ɪs ᴛʜᴇ ʀᴇsᴜʟᴛ ғᴏʀ ʏᴏᴜʀ ᴏ̨ᴜᴇʀʏ {search} \n\n</b>"
             for file in files:
