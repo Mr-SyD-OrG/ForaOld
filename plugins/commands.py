@@ -57,23 +57,17 @@ async def start(client, message):
         if curr_time < 12:
             gtxt = "Gᴏᴏᴅ ᴍᴏʀɴɪɴG 🌄👋" 
         elif curr_time < 17:
-            gtxt = "ɢOOᴅ ᴀғᴛᴇʀɴOOɴ 🥵👋" 
+            gtxt = "Gᴏᴏᴅ ᴀғᴛᴇʀɴᴏᴏɴ 🥵👋" 
         elif curr_time < 21:
             gtxt = "Gᴏᴏᴅ ᴇᴠᴇɴɪɴG 🌅👋"
         else:
             gtxt = "Gᴏᴏᴅ ɴɪɢʜT 🥱😪👋"
         m=await message.reply_text("<i>ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ <b>ᴍᴏᴠɪᴇꜱ ꜰᴏʀᴀɢᴇ [ꜱᴇᴀʀᴄʜ] ʙᴏᴛ</b>.\nʜᴏᴘᴇ ʏᴏᴜ'ʀᴇ ᴅᴏɪɴɢ ᴡᴇʟʟ...</i>")
         await asyncio.sleep(0.6)
-        await m.edit_text("👀")
-        await asyncio.sleep(0.4)
-        await m.edit_text("⚡")
-        await asyncio.sleep(0.5)
-        await m.edit_text("<b><i>ꜱᴛᴀʀᴛɪɴɢ...</i></b>")
-        await asyncio.sleep(0.4)
         await m.edit_text("Dᴏɴᴛ ꜰᴏʀɢᴇᴛ ᴛᴏ ꜱᴜᴩᴩᴏʀᴛ ᴜꜱ! @BOT_CRAckers 🍋")
         await asyncio.sleep(1.0)
         await m.delete()        
-        m=await message.reply_sticker("CAACAgQAAxkBAAEDWlxmP3-XAxyd2WfZcINd1AL4_xM4kwACFxIAArzT-FOmYU0gLeJu7x4E") 
+        m=await message.reply_sticker("CAACAgUAAxkBAAEEhMhoDZPwkkEHBXskRevsL_egtsTeUgACNxgAAhdtgVdIA1U0xHgGWh4E") 
         await asyncio.sleep(1)
         await m.delete()
         await message.reply_photo(
@@ -146,17 +140,10 @@ async def start(client, message):
         else:
             gtxt = "Gᴏᴏᴅ ɴɪɢʜT 🥱😪👋"
         m=await message.reply_text("<i>ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ <b>ᴍʀ ᴍᴏᴠɪᴇꜱ ꜰɪʟᴇ ʙᴏᴛ</b>.\nʜᴏᴘᴇ ʏᴏᴜ'ʀᴇ ᴅᴏɪɴɢ ᴡᴇʟʟ...</i>")
-        await asyncio.sleep(0.4)
-        await m.edit_text("👀")
-        await asyncio.sleep(0.5)
-        await m.edit_text("⚡")
-        await asyncio.sleep(0.5)
-        await m.edit_text("<b><i>ꜱᴛᴀʀᴛɪɴɢ...</i></b>")
-        await asyncio.sleep(0.4)
         await m.edit_text("Dᴏɴᴛ ꜰᴏʀɢᴇᴛ ᴛᴏ ꜱᴜᴩᴩᴏʀᴛ ᴜꜱ! @BOT_CRAckers 🍋")
         await asyncio.sleep(1.0)
         await m.delete()        
-        m=await message.reply_sticker("CAACAgUAAxkBAAEDePpmZFgm0WcwNuK93-xyFlxcuERvuAACuRMAAlxlKFdLjAYn7DUluh4E") 
+        m=await message.reply_sticker("CAACAgUAAxkBAAEEhMhoDZPwkkEHBXskRevsL_egtsTeUgACNxgAAhdtgVdIA1U0xHgGWh4E") 
         await asyncio.sleep(1)
         await m.delete()
         await message.reply_photo(
@@ -209,7 +196,7 @@ async def start(client, message):
                     InlineKeyboardButton('⚝ ᴜᴘᦔΔᴛꫀ𝘴 ⚝', callback_data='channels')
                   ]]
              reply_markup = InlineKeyboardMarkup(buttons)
-             m=await message.reply_sticker("CAACAgUAAxkBAAEDePpmZFgm0WcwNuK93-xyFlxcuERvuAACuRMAAlxlKFdLjAYn7DUluh4E") 
+             m=await message.reply_sticker("CAACAgUAAxkBAAEEhMhoDZPwkkEHBXskRevsL_egtsTeUgACNxgAAhdtgVdIA1U0xHgGWh4E") 
              await asyncio.sleep(1)
              await m.delete()
              await message.reply_photo(
