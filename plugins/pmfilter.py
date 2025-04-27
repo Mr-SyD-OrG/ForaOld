@@ -2330,7 +2330,7 @@ async def auto_filter(client, msg, spoll=False):
     else:
         message = msg.message.reply_to_message  # msg will be callback query
         search, files, offset, total_results = spoll
-        m=await message.reply_sticker("CAACAgUAAxkBAAEDePVmZFUmT4nHUw8SSZ6huzlgzRGs-QAC2w8AAr6xKFc_i74CwzHdxh4E",
+        m=await message.reply_sticker("CAACAgUAAxkBAAEEhM5oDZaACnIZTuoNfkQqjbKSkERzvgACWBQAAna_cFQ2p19-lZRdIh4E",
         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(f'Sᴇᴀʀᴄʜɪɴɢ Fᴏʀ {search} 🔎', url=f"https://t.me/Mod_Moviez_X")]]) 
         )
         settings = await get_settings(message.chat.id)
@@ -2344,7 +2344,7 @@ async def auto_filter(client, msg, spoll=False):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"📁 {get_size(file.file_size)} ▷ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}", callback_data=f'{pre}#{file.file_id}'
+                    text=f"{get_size(file.file_size)} ▷ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}", callback_data=f'{pre}#{file.file_id}'
                 ),
             ]
             for file in files
@@ -2447,14 +2447,16 @@ async def auto_filter(client, msg, spoll=False):
                 cap += f"<b>\n<a href='https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}'> 📁 {get_size(file.file_size)} ▷ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}\n</a></b>"
     else:
         if settings["button"]:
-            syud = message.chat.title if message.chat.title else "Bot Cracker"              #Fix-ed by @Syd_Xyz
-            cap = f"<b>⚧️ Tɪᴛʟᴇ : <code>{search}</code>\n📂 Tᴏᴛᴀʟ ꜰɪʟᴇꜱ : <code>{total_results}</code>\n📝 RᴇQᴜᴇsᴛᴇᴅ ʙʏ : {message.from_user.mention}\n⏰ Rᴇsᴜʟᴛ ɪɴ : <code>{remaining_seconds} Sᴇᴄᴏɴᴅs</code>\n⚜️ Pᴏᴡᴇʀᴇᴅ ʙʏ : 👇\n⚡ {syud} \n\n</b>"  #Fix-ed by @Syd_Xyz
+           # syud = message.chat.title if message.chat.title else "Bot Cracker"              #Fix-ed by @Syd_Xyz
+            cap = f"<b>⚧️ Rᴇꜱᴜʟᴛꜱ Fᴏʀ <code>{search}</code></b>"
+            #cap = f"<b>⚧️ Tɪᴛʟᴇ : <code>{search}</code>\n📂 Tᴏᴛᴀʟ ꜰɪʟᴇꜱ : <code>{total_results}</code>\n📝 RᴇQᴜᴇsᴛᴇᴅ ʙʏ : {message.from_user.mention}\n⏰ Rᴇsᴜʟᴛ ɪɴ : <code>{remaining_seconds} Sᴇᴄᴏɴᴅs</code>\n⚜️ Pᴏᴡᴇʀᴇᴅ ʙʏ : 👇\n⚡ {syud} \n\n</b>"  #Fix-ed by @Syd_Xyz
         else:
-            syud = message.chat.title if message.chat.title else "Bot Cracker"              #Fix-ed by @Syd_Xyz
-            cap = f"<b>⚧️ Tɪᴛʟᴇ : <code>{search}</code>\n📂 Tᴏᴛᴀʟ ꜰɪʟᴇꜱ : <code>{total_results}</code>\n📝 RᴇQᴜᴇsᴛᴇᴅ ʙʏ : {message.from_user.mention}\n⏰ Rᴇsᴜʟᴛ ɪɴ : <code>{remaining_seconds} Sᴇᴄᴏɴᴅs</code>\n⚜️ Pᴏᴡᴇʀᴇᴅ ʙʏ : 👇\n⚡ {syud} \n\n</b>"  #Fix-ed by @Syd_Xyz
+           # syud = message.chat.title if message.chat.title else "Bot Cracker" 
+            cap = f"<b>⚧️ Rᴇꜱᴜʟᴛꜱ Fᴏʀ <code>{search}</code></b>"  #Fix-ed by @Syd_Xyz
+           # cap = f"<b>⚧️ Tɪᴛʟᴇ : <code>{search}</code>\n📂 Tᴏᴛᴀʟ ꜰɪʟᴇꜱ : <code>{total_results}</code>\n📝 RᴇQᴜᴇsᴛᴇᴅ ʙʏ : {message.from_user.mention}\n⏰ Rᴇsᴜʟᴛ ɪɴ : <code>{remaining_seconds} Sᴇᴄᴏɴᴅs</code>\n⚜️ Pᴏᴡᴇʀᴇᴅ ʙʏ : 👇\n⚡ {syud} \n\n</b>"  #Fix-ed by @Syd_Xyz
             # cap+="<b>Hᴇʏ {message.from_user.mention}, Hᴇʀᴇ ɪs ᴛʜᴇ ʀᴇsᴜʟᴛ ғᴏʀ ʏᴏᴜʀ ᴏ̨ᴜᴇʀʏ {search} \n\n</b>"
             for file in files:
-                cap += f"<b><a href='https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}'> 📁 {get_size(file.file_size)} ▷ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}\n\n</a></b>"
+                cap += f"<b><a href='https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}'> {get_size(file.file_size)} ▷ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}\n\n</a></b>"
 
     if imdb and imdb.get('poster'):
         try:
