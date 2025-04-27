@@ -46,13 +46,10 @@ async def start(client, message):
         buttons = [[
                     InlineKeyboardButton('☒ Δᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴩ ☒', url=f'http://telegram.me/{temp.U_NAME}?startgroup=true')
                 ],[
-                    InlineKeyboardButton('⌬ ᴇΔʀɴ ꪑᴏꫝᴇꪗ ⌬', callback_data="shortlink_info"),
-                    InlineKeyboardButton('⚝ ᴜᴘᦔΔᴛꫀ𝘴 ⚝', callback_data='channels')
-                ],[
                     InlineKeyboardButton('⇱  ᴄ0ᴍᴍᴀɴᴅꜱ  ⇲', callback_data='help'),
                     InlineKeyboardButton('⊛ Δʙᴏᴜᴛ ⊛', callback_data='about')
                 ],[
-                    InlineKeyboardButton("◎ Sꪊʙꜱᴄʀɪᴩᴛɪꪮɴ - Fяᴇᴇ Δɴ' Pᴀɪᴅ ◎", callback_data="premium_info")
+                    InlineKeyboardButton('⚝ ᴜᴘᦔΔᴛꫀ𝘴 ⚝', callback_data='channels')
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         current_time = datetime.now(pytz.timezone(TIMEZONE))
@@ -132,13 +129,10 @@ async def start(client, message):
         buttons = [[
                     InlineKeyboardButton('☒ Δᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴩ ☒', url=f'http://telegram.me/{temp.U_NAME}?startgroup=true')
                 ],[
-                    InlineKeyboardButton('⌬ ᴇΔʀɴ ꪑᴏꫝᴇꪗ ⌬', callback_data="shortlink_info"),
-                    InlineKeyboardButton('⚝ ᴜᴘᦔΔᴛꫀ𝘴 ⚝', callback_data='channels')
-                ],[
                     InlineKeyboardButton('⇱  ᴄ0ᴍᴍᴀɴᴅꜱ  ⇲', callback_data='help'),
                     InlineKeyboardButton('⊛ Δʙᴏᴜᴛ ⊛', callback_data='about')
                 ],[
-                    InlineKeyboardButton("◎ Sꪊʙꜱᴄʀɪᴩᴛɪꪮɴ - Fяᴇᴇ Δɴ' Pᴀɪᴅ ◎", callback_data="premium_info")
+                    InlineKeyboardButton('⚝ ᴜᴘᦔΔᴛꫀ𝘴 ⚝', callback_data='channels')
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         current_time = datetime.now(pytz.timezone(TIMEZONE))
@@ -207,16 +201,13 @@ async def start(client, message):
                     return 
         else:
              buttons = [[
-                 InlineKeyboardButton('⤬ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ⤬', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-             ],[
-                 InlineKeyboardButton('✧ ᴇΔʀꪀ ꪑᴏꫝᴇꪗ ✧', callback_data="shortlink_info"),
-                 InlineKeyboardButton('⌬ Mᴏᴠɪᴇ Gʀᴏᴜᴘ', url=GRP_LNK)
-             ],[
-                 InlineKeyboardButton('〄 Hᴇʟᴘ', callback_data='help'),
-                 InlineKeyboardButton('⍟ Aʙᴏᴜᴛ', callback_data='about')
-             ],[
-                 InlineKeyboardButton('✇ Jᴏɪɴ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ✇', url=CHNL_LNK)
-             ]]
+                    InlineKeyboardButton('☒ Δᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴩ ☒', url=f'http://telegram.me/{temp.U_NAME}?startgroup=true')
+                ],[
+                    InlineKeyboardButton('⇱  ᴄ0ᴍᴍᴀɴᴅꜱ  ⇲', callback_data='help'),
+                    InlineKeyboardButton('⊛ Δʙᴏᴜᴛ ⊛', callback_data='about')
+                ],[
+                    InlineKeyboardButton('⚝ ᴜᴘᦔΔᴛꫀ𝘴 ⚝', callback_data='channels')
+                  ]]
              reply_markup = InlineKeyboardMarkup(buttons)
              m=await message.reply_sticker("CAACAgUAAxkBAAEDePpmZFgm0WcwNuK93-xyFlxcuERvuAACuRMAAlxlKFdLjAYn7DUluh4E") 
              await asyncio.sleep(1)
