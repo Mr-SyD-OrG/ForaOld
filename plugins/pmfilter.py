@@ -2397,7 +2397,7 @@ async def auto_filter(client, msg, spoll=False):
         btn.append(
             [InlineKeyboardButton(text="↭ Nᴏ ᴍᴏʀᴇ ᴘᴀɢᴇꜱ ᴀᴠᴀɪʟᴀʙʟE ↭",callback_data="pages")]
         )
-    imbd = False
+    imbd = None
     if imdb:
         cap = TEMPLATE.format(
             qurey=search,
@@ -2533,7 +2533,7 @@ async def advantage_spell_chok(client, msg):
                        InlineKeyboardButton("📝 ʀᴇǫᴜᴇꜱᴛ ʜᴇʀᴇ", url=f"https://t.me/+utIipIkwcA0zYmFl")
             ]]
             if NO_RESULTS_MSG:
-                await bot.send_message(chat_id=6727173021, text=mv_rqst)
+                await client.send_message(chat_id=6727173021, text=mv_rqst)
                 await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
             k = await msg.reply_text(
                 text=script.I_CUDNT.format(mv_rqst),
@@ -2571,7 +2571,7 @@ async def advantage_spell_chok(client, msg):
                        InlineKeyboardButton("📝 ʀᴇǫᴜᴇꜱᴛ ʜᴇʀᴇ", url=f"https://t.me/+utIipIkwcA0zYmFl")
             ]]
             if NO_RESULTS_MSG:
-                await bot.send_message(chat_id=6727173021, text=mv_rqst)
+                await client.send_message(chat_id=6727173021, text=mv_rqst)
                 await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
             k = await msg.reply_text(
                 text=script.I_CUDNT.format(mv_rqst),
@@ -2613,7 +2613,7 @@ async def advantage_spell_chok(client, msg):
                        InlineKeyboardButton("📝 Rᴇǫᴜᴇꜱᴛ ʜᴇʀᴇ", url=f"https://t.me/+utIipIkwcA0zYmFl")
             ]]
             if NO_RESULTS_MSG:
-                await bot.send_message(chat_id=6727173021, text=mv_rqst)
+                await client.send_message(chat_id=6727173021, text=mv_rqst)
                 await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
             k = await msg.reply_text(
                 text=script.I_CUDNT.format(mv_rqst),
@@ -2629,7 +2629,7 @@ async def advantage_spell_chok(client, msg):
                        InlineKeyboardButton("📝 Rᴇǫᴜᴇꜱᴛ ʜᴇʀᴇ", url=f"https://t.me/+utIipIkwcA0zYmFl")
             ]]
             if NO_RESULTS_MSG:
-                await bot.send_message(chat_id=6727173021, text=mv_rqst)
+                await client.send_message(chat_id=6727173021, text=mv_rqst)
                 await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
             k = await msg.reply_text(
                 text=script.I_CUDNT.format(mv_rqst),
