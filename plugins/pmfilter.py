@@ -2382,7 +2382,7 @@ async def auto_filter(client, msg, spoll=False):
     if offset != "":
         req = message.from_user.id if message.from_user else 0
         try:
-            if settings['max_btn']:
+            if syyd:
                 btn.append(
                     [InlineKeyboardButton("ᴘΔɢᴇ", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/10)}",callback_data="pages"), InlineKeyboardButton(text="ɴᴇxᴛ ⋟",callback_data=f"next_{req}_{key}_{offset}")]
                 )
@@ -2438,27 +2438,28 @@ async def auto_filter(client, msg, spoll=False):
             for file in files:
                 cap += f"<b>\n<a href='https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}'> 📁 {get_size(file.file_size)} ▷ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}\n</a></b>"
     else:
-        if settings["button"]:
+        #if settings["button"]:
            # syud = message.chat.title if message.chat.title else "Bot Cracker"              #Fix-ed by @Syd_Xyz
-            cap = f"<b>🧊 Rᴇꜱᴜʟᴛꜱ Fᴏʀ <code>{search}</code></b>"
+        cap = f"<b>🧊 Rᴇꜱᴜʟᴛꜱ Fᴏʀ <code>{search}</code></b>"
             #cap = f"<b>⚧️ Tɪᴛʟᴇ : <code>{search}</code>\n📂 Tᴏᴛᴀʟ ꜰɪʟᴇꜱ : <code>{total_results}</code>\n📝 RᴇQᴜᴇsᴛᴇᴅ ʙʏ : {message.from_user.mention}\n⏰ Rᴇsᴜʟᴛ ɪɴ : <code>{remaining_seconds} Sᴇᴄᴏɴᴅs</code>\n⚜️ Pᴏᴡᴇʀᴇᴅ ʙʏ : 👇\n⚡ {syud} \n\n</b>"  #Fix-ed by @Syd_Xyz
-        else:
+       # else:
            # syud = message.chat.title if message.chat.title else "Bot Cracker" 
-            cap = f"<b>🧊 Rᴇꜱᴜʟᴛꜱ Fᴏʀ <code>{search}</code></b>"  #Fix-ed by @Syd_Xyz
+            #cap = f"<b>🧊 Rᴇꜱᴜʟᴛꜱ Fᴏʀ <code>{search}</code></b>"  #Fix-ed by @Syd_Xyz
            # cap = f"<b>⚧️ Tɪᴛʟᴇ : <code>{search}</code>\n📂 Tᴏᴛᴀʟ ꜰɪʟᴇꜱ : <code>{total_results}</code>\n📝 RᴇQᴜᴇsᴛᴇᴅ ʙʏ : {message.from_user.mention}\n⏰ Rᴇsᴜʟᴛ ɪɴ : <code>{remaining_seconds} Sᴇᴄᴏɴᴅs</code>\n⚜️ Pᴏᴡᴇʀᴇᴅ ʙʏ : 👇\n⚡ {syud} \n\n</b>"  #Fix-ed by @Syd_Xyz
             # cap+="<b>Hᴇʏ {message.from_user.mention}, Hᴇʀᴇ ɪs ᴛʜᴇ ʀᴇsᴜʟᴛ ғᴏʀ ʏᴏᴜʀ ᴏ̨ᴜᴇʀʏ {search} \n\n</b>"
-            for file in files:
-                cap += f"<b><a href='https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}'> {get_size(file.file_size)} ▷ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}\n\n</a></b>"
+            #for file in files:
+                ₹cap += f"<b><a href='https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}'> {get_size(file.file_size)} ▷ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}\n\n</a></b>"
 
-    if imdb and imdb.get('poster'):
+    #if imdb and imdb.get('poster'):
+    if syyd == "SuB":
         try:
             hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap, reply_markup=InlineKeyboardMarkup(btn))
             await m.delete()
             try:
-                if settings['auto_delete']:
-                    await asyncio.sleep(300)
-                    await hehe.delete()
-                    await message.delete()
+               # if settings['auto_delete']:
+                await asyncio.sleep(300)
+                await hehe.delete()
+                await message.delete()
             except KeyError:
                 await save_group_settings(message.chat.id, 'auto_delete', True)
                 await asyncio.sleep(300)
@@ -2470,11 +2471,11 @@ async def auto_filter(client, msg, spoll=False):
             hmm = await message.reply_photo(photo=poster, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
             await m.delete()
             try:
-               if settings['auto_delete']:
-                    await asyncio.sleep(300)
-                    m=await message.reply_text("🔎")
-                    await hmm.delete()
-                    await message.delete()
+               #if settings['auto_delete']:
+                await asyncio.sleep(300)
+                m=await message.reply_text("🔎")
+                await hmm.delete()
+                await message.delete()
             except KeyError:
                 await save_group_settings(message.chat.id, 'auto_delete', True)
                 await asyncio.sleep(300)
@@ -2486,10 +2487,10 @@ async def auto_filter(client, msg, spoll=False):
             fek = await message.reply_text(text=cap, reply_markup=InlineKeyboardMarkup(btn))
             await m.delete()
             try:
-                if settings['auto_delete']:
-                    await asyncio.sleep(300)
-                    await fek.delete()
-                    await message.delete()
+               # if settings['auto_delete']:
+                await asyncio.sleep(300)
+                await fek.delete()
+                await message.delete()
             except KeyError:
                 await save_group_settings(message.chat.id, 'auto_delete', True)
                 await asyncio.sleep(300)
@@ -2499,10 +2500,10 @@ async def auto_filter(client, msg, spoll=False):
         fuk = await message.reply_text(text=cap, reply_markup=InlineKeyboardMarkup(btn), disable_web_page_preview=True)
         await m.delete()
         try:
-            if settings['auto_delete']:
-                await asyncio.sleep(300)
-                await fuk.delete()
-                await message.delete()
+           # if settings['auto_delete']:
+            await asyncio.sleep(300)
+            await fuk.delete()
+            await message.delete()
         except KeyError:
             await save_group_settings(message.chat.id, 'auto_delete', True)
             await asyncio.sleep(300)
