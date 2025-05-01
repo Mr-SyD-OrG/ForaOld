@@ -2399,7 +2399,7 @@ async def auto_filter(client, msg, spoll=False):
         btn.append(
             [InlineKeyboardButton(text="↭ Nᴏ ᴍᴏʀᴇ ᴘᴀɢᴇꜱ ᴀᴠᴀɪʟᴀʙʟE ↭",callback_data="pages")]
         )
-    imbd = None
+    imbd = False
     if imdb:
         cap = TEMPLATE.format(
             qurey=search,
