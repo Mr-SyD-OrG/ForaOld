@@ -2309,12 +2309,11 @@ async def auto_filter(client, msg, spoll=False):
             search = re.sub(r"\s+", " ", search).strip()
             search = search.replace("-", " ")
             search = search.replace(":","")
-            await message.reply_text("1")
+            
             files, offset, total_results = await get_search_results(message.chat.id ,search, offset=0, filter=True)
             settings = await get_settings(message.chat.id)
-            await message.reply_text("2")
+            
             if not files:
-                await message.reply_text("3")
                 await m.delete()
                 if settings["spell_check"]:
                     return await advantage_spell_chok(client, msg)
@@ -2328,12 +2327,11 @@ async def auto_filter(client, msg, spoll=False):
     else:
         message = msg.message.reply_to_message  # msg will be callback query
         search, files, offset, total_results = spoll
-        m=await message.reply_sticker("CAACAgUAAxkBAAEEhM5oDZaACnIZTuoNfkQqjbKSkERzvgACWBQAAna_cFQ2p19-lZRdIh4E",
+        m=await message.reply_sticker("CAACAgUAAxkBAAEEh1poEucL9UNWjuXalmNspX_t9FujoAACWBQAAna_cFQ2p19-lZRdIh4E",
         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(f'Sᴇᴀʀᴄʜɪɴɢ Fᴏʀ {search} 🔎', url=f"https://t.me/Mod_Moviez_X")]]) 
         )
         settings = await get_settings(message.chat.id)
         await msg.message.delete()
-    await message.reply_text("5")
     pre = 'filep' if settings['file_secure'] else 'file'
     key = f"{message.chat.id}-{message.id}"
     FRESH[key] = search
@@ -2402,10 +2400,7 @@ async def auto_filter(client, msg, spoll=False):
         btn.append(
             [InlineKeyboardButton(text="↭ Nᴏ ᴍᴏʀᴇ ᴘᴀɢᴇꜱ ᴀᴠᴀɪʟᴀʙʟE ↭",callback_data="pages")]
         )
-    cur_time = datetime.now(pytz.timezone('Asia/Kolkata')).time()
-    time_difference = timedelta(hours=cur_time.hour, minutes=cur_time.minute, seconds=(cur_time.second+(cur_time.microsecond/1000000))) - timedelta(hours=curr_time.hour, minutes=curr_time.minute, seconds=(curr_time.second+(curr_time.microsecond/1000000)))
-    remaining_seconds = "{:.2f}".format(time_difference.total_seconds())
-    TEMPLATE = script.IMDB_TEMPLATE_TXT
+    
     syd = False
     if syd:
         await message.reply_text("404")
