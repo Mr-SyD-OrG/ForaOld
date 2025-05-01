@@ -2279,7 +2279,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     
 async def auto_filter(client, msg, spoll=False):
-    curr_time = datetime.now(pytz.timezone('Asia/Kolkata')).time()
+    #curr_time = datetime.now(pytz.timezone('Asia/Kolkata')).time()
     # reqstr1 = msg.from_user.id if msg.from_user else 0
     # reqstr = await client.get_users(reqstr1)
     
@@ -2335,8 +2335,8 @@ async def auto_filter(client, msg, spoll=False):
     temp.GETALL[key] = files
     temp.SHORT[message.from_user.id] = message.chat.id
    # if settings["button"]:
-    syd = True
-    if syd:
+    syyd = "SyD"
+    if syyd:
         btn = [
             [
                 InlineKeyboardButton(
