@@ -2309,16 +2309,16 @@ async def auto_filter(client, msg, spoll=False):
             search = search.replace("-", " ")
             search = search.replace(":","")
             files, offset, total_results = await get_search_results(message.chat.id ,search, offset=0, filter=True)
-            settings = await get_settings(message.chat.id)
+            #settings = await get_settings(message.chat.id)
             if not files:
                 await m.delete()
-                if settings["spell_check"]:
-                    return await advantage_spell_chok(client, msg)
-                else:
+               # if settings["spell_check"]:
+                return await advantage_spell_chok(client, msg)
+               # else:
                     
                     # if NO_RESULTS_MSG:
                     #     await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, search)))
-                    return
+                    #return
         else:
             return
     else:
@@ -2327,7 +2327,7 @@ async def auto_filter(client, msg, spoll=False):
         m=await message.reply_sticker("CAACAgUAAxkBAAEEhM5oDZaACnIZTuoNfkQqjbKSkERzvgACWBQAAna_cFQ2p19-lZRdIh4E",
         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(f'Sᴇᴀʀᴄʜɪɴɢ Fᴏʀ {search} 🔎', url=f"https://t.me/Mod_Moviez_X")]]) 
         )
-        settings = await get_settings(message.chat.id)
+        #settings = await get_settings(message.chat.id)
         await msg.message.delete()
     pre = 'filep' if settings['file_secure'] else 'file'
     key = f"{message.chat.id}-{message.id}"
