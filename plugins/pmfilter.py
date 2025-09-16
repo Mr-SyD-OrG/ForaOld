@@ -91,7 +91,7 @@ async def give_filter(client, message):
                     await auto_filter(client, message) 
     else: #a better logic to avoid repeated lines of code in auto_filter function
         search = message.text
-        temp_files, temp_offset, total_results = await get_search_results(chat_id=message.chat.id, query=search.lower(), offset=0, filter=True)
+        temp_files, temp_offset, total_results = await get_search_results(client, chat_id=message.chat.id, query=search.lower(), offset=0, filter=True)
         if total_results == 0:
             return
         else:
@@ -132,7 +132,7 @@ async def next_page(bot, query):
         await query.answer(script.OLD_ALRT_TXT.format(query.from_user.first_name),show_alert=True)
         return
 
-    files, n_offset, total = await get_search_results(query.message.chat.id, search, offset=offset, filter=True)
+    files, n_offset, total = await get_search_results(bot, query.message.chat.id, search, offset=offset, filter=True)
     try:
         n_offset = int(n_offset)
     except:
@@ -290,7 +290,7 @@ async def advantage_spoll_choker(bot, query):
     if gl == False:
         k = await manual_filters(bot, query.message, text=movie)
         if k == False:
-            files, offset, total_results = await get_search_results(query.message.chat.id, movie, offset=0, filter=True)
+            files, offset, total_results = await get_search_results(bot, query.message.chat.id, movie, offset=0, filter=True)
             if files:
                 k = (movie, files, offset, total_results)
                 await auto_filter(bot, query, k)
@@ -377,7 +377,7 @@ async def filter_qualities_cb_handler(client: Client, query: CallbackQuery):
         search = f"{search} {qual}" 
     BUTTONS[key] = search
 
-    files, offset, total_results = await get_search_results(chat_id, search, offset=0, filter=True)
+    files, offset, total_results = await get_search_results(client, chat_id, search, offset=0, filter=True)
     if not files:
         await query.answer("🚫 ɴᴏ ꜰɪʟᴇꜱ ᴡᴇʀᴇ ꜰᴏᴜɴᴅ 🚫 ʀᴇᴩᴏʀᴛ ᴛᴏ ᴛɢᴇ ᴀᴅᴍɪɴ.. 💥", show_alert=1)
         return
@@ -540,7 +540,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
         search = f"{search} {lang}" 
     BUTTONS[key] = search
 
-    files, offset, total_results = await get_search_results(chat_id, search, offset=0, filter=True)
+    files, offset, total_results = await get_search_results(client, chat_id, search, offset=0, filter=True)
     if not files:
         await query.answer("🚫Sᴏʀʀʏ ɴᴏ ꜰɪʟᴇꜱ ᴡᴇʀᴇ ꜰᴏᴜɴᴅ 🚫 ʀᴇᴩᴏʀᴛ ᴛᴏ ᴛʜᴇ ᴏᴡɴᴇʀ..ɪᴍᴍᴇᴅɪᴀᴛᴇʟʏ.. 💥", show_alert=1)
         return
@@ -2312,7 +2312,7 @@ async def auto_filter(client, msg, spoll=False):
             search = search.replace("-", " ")
             search = search.replace(":","")
             
-            files, offset, total_results = await get_search_results(message.chat.id ,search, offset=0, filter=True)
+            files, offset, total_results = await get_search_results(client, message.chat.id ,search, offset=0, filter=True)
             settings = await get_settings(message.chat.id)
             
             if not files:
